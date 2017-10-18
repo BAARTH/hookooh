@@ -24,7 +24,7 @@ $term_genre = wp_get_post_terms($post->ID, 'genre', array("fields" => "all"));?>
 	    		echo '</div>';
 	    	}
 	    	?>
-	    	<h2><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); echo ', '.$term_age[0]->name.' ans' ?></a></h2>
+	    	<h2><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title();echo ', '; the_field('age'); echo ' ans';?></a></h2>
 	        <h5>Inscrit depuis le <?php the_time('j F, Y') ?></h5>
 			   <h6><a href="<?= get_term_link($term_genre[0]->slug, 'genre')?>"><?= $term_genre[0]->name ?></a></h6>
 	        <p><?php the_excerpt(); ?></p>
